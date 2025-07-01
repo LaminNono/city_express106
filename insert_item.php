@@ -1,5 +1,6 @@
 <?php
 require_once "dbconn.php";
+
 $sql = "select c.cid,c.cname from category c";
 $stmt = $conn -> query($sql);
 $stmt -> execute();
@@ -8,7 +9,6 @@ $categories = $stmt->fetchAll();
 
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 

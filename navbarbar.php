@@ -12,6 +12,22 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li>
+    
+        <?php  if(!isset($_SESSION['loginSuccess'])&& !isset($_SESSION['adminEmail'])) {?>
+          <li class="nav-item">
+          <a class="nav-link active" href="signup.php" tabindex="-1" >Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="login.php" tabindex="-1" aria-disabled="true">login</a>
+        </li>
+      <?php } else {
+
+
+      ?>
+        <li class="nav-item">
+          <a class="nav-link active" href="logout.php" tabindex="-1" aria-disabled="true">Log Out</a>
+        </li>
+        <?php }?>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
@@ -21,15 +37,17 @@
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
+
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disable</a>
         </li>
+      
       </ul>
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <input class="form-control me-2" name="kSearch"type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-primary" name = "bSearch"type="submit">Search</button>
       </form>
     </div>
   </div>
